@@ -934,8 +934,8 @@
   // Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
   // If not defined, probe limits will be used.
   // Override with 'M422 S<index> X<pos> Y<pos>'
-  #define Probe_Point_Offset_X 30
-  #define Probe_Point_Offset_Y 50
+  #define Probe_Point_Offset_X 16
+  #define Probe_Point_Offset_Y 10
   #define Z_STEPPER_ALIGN_XY {  { Probe_Point_Offset_X, Probe_Point_Offset_Y}, { X_BED_SIZE-Probe_Point_Offset_X, Probe_Point_Offset_Y } , { X_BED_SIZE-Probe_Point_Offset_X, Y_BED_SIZE-Probe_Point_Offset_Y } ,{ Probe_Point_Offset_X, Y_BED_SIZE-Probe_Point_Offset_Y } }
 
 
@@ -2032,10 +2032,10 @@
  * the probe to be unable to reach any points.
  */
 #if PROBE_SELECTED && !IS_KINEMATIC
-  #define PROBING_MARGIN_LEFT 12
-  #define PROBING_MARGIN_RIGHT 12
-  #define PROBING_MARGIN_FRONT 30
-  #define PROBING_MARGIN_BACK 30
+  #define PROBING_MARGIN_LEFT 16
+  #define PROBING_MARGIN_RIGHT 16
+  #define PROBING_MARGIN_FRONT 10
+  #define PROBING_MARGIN_BACK 10
 #endif
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
