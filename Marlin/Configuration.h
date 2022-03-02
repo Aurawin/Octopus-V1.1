@@ -107,7 +107,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT -1
+#define SERIAL_PORT 3 // WiFi
 
 /**
  * Serial Port Baud Rate
@@ -1203,7 +1203,7 @@
  */
 #define NOZZLE_OFFSET_X 39.2
 #define NOZZLE_OFFSET_Y -4
-#define NOZZLE_OFFSET_Z -1.5
+#define NOZZLE_OFFSET_Z -0.85
 
 #define NOZZLE_TO_PROBE_OFFSET { NOZZLE_OFFSET_X, NOZZLE_OFFSET_Y, NOZZLE_OFFSET_Z }
 

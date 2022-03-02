@@ -969,7 +969,7 @@
     // Define Stepper XY positions for Z1, Z2, Z3 corresponding to
     // the Z screw positions in the bed carriage.
     // Define one position per Z stepper in stepper driver order.
-    #define Z_STEPPER_ALIGN_STEPPER_XY {  { Probe_Point_Offset_X, Probe_Point_Offset_Y}, { X_BED_SIZE-Probe_Point_Offset_X, Probe_Point_Offset_Y } , { X_BED_SIZE-Probe_Point_Offset_X, Y_BED_SIZE-Probe_Point_Offset_Y } ,{ Probe_Point_Offset_X, Y_BED_SIZE-Probe_Point_Offset_Y } }
+    #define Z_STEPPER_ALIGN_STEPPER_XY {  { Probe_Point_Offset_X, 0}, { X_BED_SIZE,0} , { X_BED_SIZE, Y_BED_SIZE } ,{ 0, Y_BED_SIZE} }
 
   #else
     // Amplification factor. Used to scale the correction step up or down in case
@@ -2696,8 +2696,8 @@
   #define HOLD_MULTIPLIER_XY  1.0  // Scales down the holding current from run current
   #define HOLD_MULTIPLIER_E   1.0  // Scales down the holding current from run current
 
-  #define RSENSE_X           0.09  // Stepper's max current 1A 0.22 -> 1.2A=0.18
-  #define RSENSE_Y           0.09  // Stepper's max current 1A 0.22 -> 1.2A=0.18
+  #define RSENSE_X           0.10  // Stepper's max current 1A 0.22 -> 1.2A=0.18
+  #define RSENSE_Y           0.10  // Stepper's max current 1A 0.22 -> 1.2A=0.18
   #define RSENSE_PANCAKE     0.07  // Stepper's max current 0.850A ~ 0.07
   #define RSENSE_MATRIX      0.10  // Matrix extruder  
   #define RSENSE_Z           0.10  // Add addtional bias for the dual z steppers
@@ -2992,7 +2992,7 @@
    * Define your own with:
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
-  #define CHOPPER_TIMING CHOPPER_DEFAULT_12V        // All axes (override below)
+  #define CHOPPER_TIMING CHOPPER_DEFAULT_24V        // All axes (override below)
   //#define CHOPPER_TIMING_X  CHOPPER_TIMING        // For X Axes (override below)
   //#define CHOPPER_TIMING_X2 CHOPPER_TIMING_X
   //#define CHOPPER_TIMING_Y  CHOPPER_TIMING        // For Y Axes (override below)
