@@ -2973,9 +2973,9 @@
    */
   #define STEALTHCHOP_XY
   #define STEALTHCHOP_Z
-  #define STEALTHCHOP_I
-  #define STEALTHCHOP_J
-  #define STEALTHCHOP_K
+  //#define STEALTHCHOP_I
+  //#define STEALTHCHOP_J
+  //#define STEALTHCHOP_K
   //#define STEALTHCHOP_E
 
   /**
@@ -3122,7 +3122,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  #define SQUARE_WAVE_STEPPING
+ // #define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.

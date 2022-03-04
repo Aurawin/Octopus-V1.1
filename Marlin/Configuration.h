@@ -938,7 +938,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 25.0, 375.0}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 25.0, 335.4}
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1218,7 +1218,7 @@
 #define Z_PROBE_FEEDRATE_FAST (12*60)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
-#define Z_PROBE_FEEDRATE_SLOW (8*60)
+#define Z_PROBE_FEEDRATE_SLOW (7*60)
 
 /**
  * Probe Activation Switch
