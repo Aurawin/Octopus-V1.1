@@ -2701,7 +2701,7 @@
   #define RSENSE_Y           0.10  // Stepper's max current 1A 0.22 -> 1.2A=0.18
   #define RSENSE_PANCAKE     0.07  // Stepper's max current 0.850A ~ 0.07
   #define RSENSE_MATRIX      0.10  // Matrix extruder  
-  #define RSENSE_Z           0.11  // Add addtional bias for the dual z steppers
+  #define RSENSE_Z           0.10  // Add addtional bias for the dual z steppers
 
 
   /**
@@ -2821,7 +2821,7 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      720
+    #define E0_CURRENT      780
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         RSENSE_MATRIX
     #define E0_CHAIN_POS     -1
@@ -3042,11 +3042,11 @@
    */
   //#define HYBRID_THRESHOLD
 
-  #define X_HYBRID_THRESHOLD     160  // [mm/s]
-  #define X2_HYBRID_THRESHOLD    100
-  #define Y_HYBRID_THRESHOLD     160
-  #define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD       3
+  #define X_HYBRID_THRESHOLD     180  // [mm/s]
+  #define X2_HYBRID_THRESHOLD    180
+  #define Y_HYBRID_THRESHOLD     180
+  #define Y2_HYBRID_THRESHOLD    180
+  #define Z_HYBRID_THRESHOLD       7
   #define Z2_HYBRID_THRESHOLD      3
   #define Z3_HYBRID_THRESHOLD      3
   #define Z4_HYBRID_THRESHOLD      3
