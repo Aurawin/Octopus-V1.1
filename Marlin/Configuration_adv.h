@@ -2700,7 +2700,7 @@
   #define RSENSE_Y           0.10  // Stepper's max current 1A 0.22 -> 1.2A=0.18
   #define RSENSE_PANCAKE     0.07  // Stepper's max current 0.850A ~ 0.07
   #define RSENSE_MATRIX      0.10  // Matrix extruder  
-  #define RSENSE_Z           0.10  // Add addtional bias for the dual z steppers
+  #define RSENSE_Z           0.11  // Add addtional bias for the dual z steppers
 
 
   /**
@@ -2750,9 +2750,9 @@
   #endif
 
   #if AXIS_IS_TMC(Z)
-    #define Z_CURRENT       860
+    #define Z_CURRENT       850
     #define Z_CURRENT_HOME  900
-    #define Z_MICROSTEPS     2
+    #define Z_MICROSTEPS     1
     #define Z_RSENSE        RSENSE_Z
     #define Z_CHAIN_POS      -1
     #define Z_INTERPOLATE  false
@@ -2762,7 +2762,7 @@
   #if AXIS_IS_TMC(Z2)
     #define Z2_CURRENT       Z_CURRENT
     #define Z2_CURRENT_HOME  Z_CURRENT_HOME
-    #define Z2_MICROSTEPS     2
+    #define Z2_MICROSTEPS    Z_MICROSTEPS
     #define Z2_RSENSE        RSENSE_Z
     #define Z2_CHAIN_POS      -1
     #define Z2_INTERPOLATE  false
@@ -2772,7 +2772,7 @@
   #if AXIS_IS_TMC(Z3)
     #define Z3_CURRENT       Z_CURRENT
     #define Z3_CURRENT_HOME  Z_CURRENT_HOME
-    #define Z3_MICROSTEPS     2
+    #define Z3_MICROSTEPS    Z_MICROSTEPS
     #define Z3_RSENSE        RSENSE_Z
     #define Z3_CHAIN_POS      -1
     #define Z3_INTERPOLATE  false
@@ -2782,7 +2782,7 @@
   #if AXIS_IS_TMC(Z4)
     #define Z4_CURRENT       Z_CURRENT
     #define Z4_CURRENT_HOME  Z_CURRENT_HOME
-    #define Z4_MICROSTEPS     2
+    #define Z4_MICROSTEPS    Z_MICROSTEPS
     #define Z4_RSENSE        RSENSE_Z
     #define Z4_CHAIN_POS      -1
     #define Z4_INTERPOLATE  false
@@ -3121,7 +3121,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  //#define SQUARE_WAVE_STEPPING
+  #define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
