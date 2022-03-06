@@ -1188,7 +1188,7 @@
  * vibration and surface artifacts. The algorithm adapts to provide the best possible step smoothing at the
  * lowest stepping frequencies.
  */
-//#define ADAPTIVE_STEP_SMOOTHING
+#define ADAPTIVE_STEP_SMOOTHING
 
 /**
  * Custom Microstepping
@@ -2001,12 +2001,12 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-#define LIN_ADVANCE
+//#define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   #define LIN_ADVANCE_K 0.19    // Unit: mm compression per 1mm/s extruder speed
   //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
-  #define EXPERIMENTAL_SCURVE // Enable this option to permit S-Curve Acceleration
+  //#define EXPERIMENTAL_SCURVE // Enable this option to permit S-Curve Acceleration
   #define ALLOW_LOW_EJERK       // Allow a DEFAULT_EJERK value of <10. Recommended for direct drive hotends.
 #endif
 
@@ -2199,7 +2199,7 @@
 #endif
 
 // Moves (or segments) with fewer steps than this will be joined with the next move
-#define MIN_STEPS_PER_SEGMENT 3
+#define MIN_STEPS_PER_SEGMENT 8
 
 /**
  * Minimum delay before and after setting the stepper DIR (in ns)
@@ -2352,7 +2352,7 @@
 #define SERIAL_OVERRUN_PROTECTION
 
 // For serial echo, the number of digits after the decimal point
-#define SERIAL_FLOAT_PRECISION 4
+#define SERIAL_FLOAT_PRECISION 2
 
 /**
  * Set the number of proportional font spaces required to fill up a typical character space.
@@ -2716,7 +2716,7 @@
 
   #if AXIS_IS_TMC(X)
     #define X_CURRENT       820        // (mA) RMS current. Multiply by 1.414 for peak current.
-    #define X_CURRENT_HOME  800        // (mA) RMS current for sensorless homing
+    #define X_CURRENT_HOME  700        // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     32        // 0..256
     #define X_RSENSE        RSENSE_X     // Resistance Bias Factor for current limitations
     #define X_CHAIN_POS      -1        // -1..0: Not chained. 1: MCU MOSI connected. 2: Next in chain, ...
@@ -2736,7 +2736,7 @@
 
   #if AXIS_IS_TMC(Y)
     #define Y_CURRENT       820
-    #define Y_CURRENT_HOME  800
+    #define Y_CURRENT_HOME  700
     #define Y_MICROSTEPS     32
     #define Y_RSENSE          RSENSE_Y
     #define Y_CHAIN_POS      -1
@@ -2760,7 +2760,7 @@
     #define Z_MICROSTEPS     0
     #define Z_RSENSE        RSENSE_Z
     #define Z_CHAIN_POS      -1
-    #define Z_INTERPOLATE  false
+    #define Z_INTERPOLATE  true
     #define Z_HOLD_MULTIPLIER HOLD_MULTIPLIER_Z
   #endif
 
@@ -2770,7 +2770,7 @@
     #define Z2_MICROSTEPS    Z_MICROSTEPS
     #define Z2_RSENSE        RSENSE_Z
     #define Z2_CHAIN_POS      -1
-    #define Z2_INTERPOLATE  false
+    #define Z2_INTERPOLATE  Z_INTERPOLATE
     #define Z2_HOLD_MULTIPLIER HOLD_MULTIPLIER_Z
   #endif
 
@@ -2780,7 +2780,7 @@
     #define Z3_MICROSTEPS    Z_MICROSTEPS
     #define Z3_RSENSE        RSENSE_Z
     #define Z3_CHAIN_POS      -1
-    #define Z3_INTERPOLATE  false
+    #define Z3_INTERPOLATE  Z_INTERPOLATE
     #define Z3_HOLD_MULTIPLIER HOLD_MULTIPLIER_Z
   #endif
 
@@ -2790,7 +2790,7 @@
     #define Z4_MICROSTEPS    Z_MICROSTEPS
     #define Z4_RSENSE        RSENSE_Z
     #define Z4_CHAIN_POS      -1
-    #define Z4_INTERPOLATE  false
+    #define Z4_INTERPOLATE  Z_INTERPOLATE
     #define Z4_HOLD_MULTIPLIER HOLD_MULTIPLIER_Z
   #endif
 
@@ -2825,7 +2825,7 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      780
+    #define E0_CURRENT      840
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         RSENSE_MATRIX
     #define E0_CHAIN_POS     -1
@@ -2980,7 +2980,7 @@
   //#define STEALTHCHOP_I
   //#define STEALTHCHOP_J
   //#define STEALTHCHOP_K
-  //#define STEALTHCHOP_E
+  #define STEALTHCHOP_E
 
   /**
    * Optimize spreadCycle chopper parameters by using predefined parameter sets
@@ -3050,10 +3050,10 @@
   #define X2_HYBRID_THRESHOLD    180
   #define Y_HYBRID_THRESHOLD     180
   #define Y2_HYBRID_THRESHOLD    180
-  #define Z_HYBRID_THRESHOLD       7
-  #define Z2_HYBRID_THRESHOLD      3
-  #define Z3_HYBRID_THRESHOLD      3
-  #define Z4_HYBRID_THRESHOLD      3
+  #define Z_HYBRID_THRESHOLD       2
+  #define Z2_HYBRID_THRESHOLD      2
+  #define Z3_HYBRID_THRESHOLD      2
+  #define Z4_HYBRID_THRESHOLD      2
   #define I_HYBRID_THRESHOLD       3
   #define J_HYBRID_THRESHOLD       3
   #define K_HYBRID_THRESHOLD       3
@@ -3126,7 +3126,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
- // #define SQUARE_WAVE_STEPPING
+ #define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
