@@ -2829,7 +2829,7 @@
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         RSENSE_MATRIX
     #define E0_CHAIN_POS     -1
-    #define E0_INTERPOLATE false
+    #define E0_INTERPOLATE true
     #define E0_HOLD_MULTIPLIER HOLD_MULTIPLIER_E
   #endif
 
@@ -3796,7 +3796,7 @@
      * Use 'M200 [T<extruder>] L<limit>' to override and 'M502' to reset.
      * A non-zero value activates Volume-based Extrusion Limiting.
      */
-    #define DEFAULT_VOLUMETRIC_EXTRUDER_LIMIT 50.00      // (mm^3/sec)
+    #define DEFAULT_VOLUMETRIC_EXTRUDER_LIMIT 40.00      // (mm^3/sec)
   #endif
 #endif
 
